@@ -1,0 +1,135 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  body{
+    background-color:#141414;
+  }
+  html{
+    font-size:10px;
+  }
+ .whoiswatching{
+  width: 100vw;
+  min-height: 100vh;
+  background-color: #141414;
+} 
+ .logo-section{
+   width:100vw;
+   padding:20px 50px;
+   position:relative;
+   z-index:10;
+   margin-top:10px;
+   height:7px;
+   display:flex;
+   justify-content:flex-start;
+   align-items: center;
+ }
+ .logo-section a img{
+  height:45px;
+ width:160px;
+ cursor: pointer;
+ }
+ .main-div{
+   width:100vw;
+   height:80vh;
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   color:#fff;
+
+ }
+ .main-div h1{
+   font-size: 2px;
+   letter-spacing: 0.2rem;
+   font-size:60;
+ }
+ .memberDiv{
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   flex-wrap:wrap;/*the pic below the another pic are perfectly when we minimize teh size of screen*/
+
+ }
+ .memberDiv .btn , 
+ .addIcon{
+   height:10vw;
+   min-height:8.4rem;
+   max-height:20rem;
+   width:10vw;
+   min-width:8.4rem;
+   max-width:20rem;
+   border: .4rem;
+   border: none;
+   outline:none;
+   margin-top:3rem;/*space between pics and whois watching*/
+   margin-right:3.5rem;
+   position:relative;
+   cursor: pointer;
+   background-repeat: no-repeat;
+   background-size: cover;
+  }
+  .memberDiv .btn:nth-child(1){
+    background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/disp/84c20033850498.56ba69ac290ea.png");
+  }
+  .memberDiv .btn:nth-child(2){
+    background-image: url("https://i.pinimg.com/originals/d8/70/20/d87020c70b0bf5eec4918874fa7d0f9f.jpg");
+  }
+  .memberDiv .btn:nth-child(3){
+    background-image: url("https://occ-0-2087-2164.1.nflxso.net/dnm/api/v6/K6hjPJd6cR6FpVELC5Pd6ovHRSk/AAAABWu33TcylnaLZwSdtgKR6mr0O63afqQLxZbzHYQZLkCJ9bgMTtsf6tzs_ua2BuTpAVPbhxnroiEA-_bqJmKWiXblO9h-.png?r=f71");
+  }
+  .memberDiv .btn:nth-child(4){
+    background-image: url("https://th.bing.com/th/id/OIP.WQtvVSX_upiNrA-gk9TEpAAAAA?w=149&h=180&c=7&r=0&o=5&pid=1.7");
+  }
+  .memberDiv .btn:nth-child(5){
+    background-image:url("https://th.bing.com/th/id/OIP.Fn_JfIeC12rS1weLLJxdyQHaHa?w=193&h=162&c=7&r=0&o=5&pid=1.7");
+  }
+  .memberDiv .btn:nth-child(6){
+    background-image: url("https://th.bing.com/th/id/OIP.71Rkiam1idbfXDUtyhRL1gHaHa?pid=ImgDet&w=193&h=193&c=7");
+  }
+  .memberDiv .btn:hover{
+    box-shadow:inset 0px 0px 0px 5px #fff inset;  
+  }
+  .memberDiv .btn span,
+  .addIcon span
+  {
+    width:inherit;
+    position: absolute;
+    bottom: -3.5rem;
+    left:0;
+    text-transform: capitalize;
+    color: rgb(153,153,153);
+    font-size: 1.8rem;
+  }
+  .fa-plus-circle{
+    font-size: 7vw;
+    color: gray;
+    opacity: 0.8;/*dikhna */
+  }
+  .addIcon{
+    background-color: transparent;
+  }
+  .addIcon:hover{
+    background-color: #fff;
+  }
+  .addIcon:hover>.fa-plus-circle{
+    opacity:3;
+  }
+  .manageProfile{
+    border: 1px solid grey;
+    color:grey;
+    text-transform:uppercase;
+    padding:0.8rem 2.8rem;
+    letter-spacing: 5px;
+    font-size: 1.8rem;
+    margin-top: 80px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+.manageProfile:hover{
+  border:2px solid #fff;
+  color:#fff;
+}
+

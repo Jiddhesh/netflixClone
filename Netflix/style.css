@@ -1,0 +1,543 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: black;
+    color: white;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  .navbar {
+    position: absolute;/* to push bg img below the navbar */
+    top: 0;/* bg image also holde the navbar*/
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 3% 5%;
+    z-index: 10;/* navbar to be on top*/
+  }
+  
+  .navbar__brand {
+    width: 100px;
+    height: 100%;
+  }
+  
+  .brand__logo {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .language__drop__down {
+    background: transparent;
+    border: none;
+    color: white;
+  }
+  /* focus class is used to remove some yellow outline from drop down box*/
+  .language__drop__down:focus {
+    outline: none;
+  }
+  
+  .dropdown__container {
+    border: 1px solid white;
+    padding: 0.4rem;
+    border-radius: 4px;/* for rounded border*/
+    background: rgba(0, 0, 0, 0.4);
+  }
+  
+  .signin__button {
+    background-color: #dc030f;
+    border: 1px solid #dc030f;
+    color: white;
+    padding: 0.70rem 0.5rem;
+    border-radius: 4px;/* for rounded border*/
+  }
+  
+  .navbar__nav__items {  /*to add some space between container and button for mobile screen*/
+    display: flex;
+    gap: 10px;
+  }
+  
+  .hero__bg__image__container {
+    width: 100%;
+    height: 80vh;/*to add black space to bottom*/
+  }
+  
+  .hero__bg__image {
+    width: 100%;/*  bg image never go out of the screen */
+    height: 100%;
+    object-fit: cover;/* it also wont overflow and image align properly */
+  }
+  
+  .hero__bg__overlay {
+    /*we want to our overlay(black color) to place top of the image to occupy whole width*/
+    position: absolute;
+    inset: 0;/*to write(top,left,right,bottom:0) four propery we do this and so that it will spread across everything and stay on center of the screen*/
+    width: 100%;
+    height: 80vh;
+    background: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(/*to look so cool at background*/
+      to top,
+      rgba(0, 0, 0, 0.8) 0,
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.8) 100%
+    );
+  }
+  
+  .hero__card {
+    position: absolute;
+    top: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .hero__title {
+    font-weight: 600;
+    font-size: 2rem;
+  }
+  
+  .hero__subtitle,
+  .hero__description {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  
+  .hero__description {
+    margin: 0 50px;/*to add space for para left and right*/
+  }
+  
+  .email__input {
+    border: none;
+    background: transparent;
+    width: 100%;/* it occupying whole width and height(form container )*/
+    height: 100%;
+    padding-left: 7px;/*to move email address little bit of right*/
+  }
+  .email__label {
+    color: black;
+    position: absolute;
+    top: 28%;/*for align label on left top*/
+    left: 2%;
+    color: rgb(153, 149, 149);
+    transition: 0.5s;/*to go on top very smothly*/
+  }
+  
+  .email__form__container {
+    display: flex;/*beacause the email container go out of the srceen*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;/*to add gap between email container and button*/
+  }
+  
+  .form__container {
+    background-color: white;
+    width: 90%;
+    height: 50px;
+    position: relative;/*email label dont run out of the form container*/
+  }
+  
+  .email__input:focus + .email__label {/*when email input is focus then selct email label on move it on top*/
+    top: 0.2rem;/*for moving on top*/
+    font-size: 10px;/*for decresing font size*/
+  }
+  
+  .email__input:not(:placeholder-shown).email__input:not(:focus) + .email__label {/*it will stay top itself*/
+    top: 0.2rem;
+    font-size: 10px;
+  }
+  
+  .email__input:focus-visible {/*to remove the orange border from form container*/
+    outline: none;
+  }
+  
+  .primary__button {
+    background-color: #dc030f;
+    border: 1px solid #dc030f;
+    color: white;
+    padding: 0.8rem 1.2rem;/*for top 0.8 and left and right1.2*/
+    border-radius: 2px;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  
+  .feature {
+    border-top: 8px solid #222;/*to add black border behind on video and content*/
+    padding: 2rem 1rem;/*top & bottom and left & right*/
+  }
+  
+  .feature__details {
+    text-align: center;/*to get the all content on center*/
+  }
+  
+  .feature__title {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0;
+  }
+  
+  .feature__sub__title {
+    font-size: 15px;
+    font-weight: 400;
+  }
+  
+  .feature__image__container {
+    width: 100%;
+    position: relative;/*to video absulutely position wherever we choose it to(for video)*/
+  }
+  .feature__image {
+    width: 100%;
+  }
+  
+  .feature__backgroud__video__container {
+    position: absolute;
+    width: 100%;/*to occupying whole width*/
+    top: 20%;
+    left: 13%;
+    height: 100%;
+    max-width: 73%;
+    max-height: 54%;
+    z-index: -2;/*we want to video behind to that image*/
+  }
+  
+  .feature__backgroud__video {
+    width: 100%;
+  }
+  
+  .feature__2__poster__container {
+    position: absolute;
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 16em;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    height: 60px;
+    padding: 0.25rem 0.6rem;
+    gap: 15px;
+  }
+  
+  .poster__container {
+    width: 20%;
+  }
+  
+  .poster {
+    /*this is for actual image to hold parent class whole width*/
+    width: 100%;
+    height: 100%;/*to image does not look big and adjust perfectly*/
+  }
+  .poster__details {
+    width: 60%;
+  }
+  .poster__details > h4 {
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .poster__details > h6 {
+    font-size: 12px;
+    font-weight: 400;
+    color: rgb(63, 63, 246);
+  }
+  
+  .download__gif__container {
+    width: 20%;
+    height: 100%;
+  }
+  .gif {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .feature__3__backgroud__video__container {
+    max-width: 63%;
+    max-height: 47%;
+    z-index: -2;
+    top: 9%;
+    left: 19%;
+  }
+  
+  .FAQ__accordian
+   {
+    width: 100%;
+  }
+  .FAQ__title
+   {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+    font-size: 18px;
+    background-color: #303030;
+    border: 1px solid #303030;
+    color: white;
+  }
+  .FAQ__visible
+  {
+    background-color: #303030;
+    border-top: 1px solid black;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out;
+  }
+  
+  .FAQ__visible > p {
+    margin: 1rem;
+   /*to add space between two para*/
+   font-family: "Poppins", sans-serif;
+  }
+  .FAQ__list__container {
+    border-top: 8px solid #222;
+    padding: 2rem 0;
+  }
+  .FAQ__heading {
+    font-size: 20px;
+    text-align: center;
+    font-weight: 600;
+    margin: 1rem 3rem;
+  }
+  
+  .FAQ__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+  }
+  
+  .FAQ__get__started__email {
+    text-align: center;
+  }
+  
+  .FAQ__get__started__email > h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 2rem 0;
+  }
+  
+  
+  footer {
+    border-top: 8px solid #333;
+    padding: 2rem 1rem;
+    color: #757575;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .footer__row__2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  
+  .footer__row__1 > h4 {
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
+  .footer__row__3 > .dropdown__container {
+    width: fit-content;
+    border: 1px solid #757575;
+    color: #757575;
+  }
+  
+  .footer__row__3 > .dropdown__container > .language__drop__down {
+    color: #757575;
+  }
+  /*for medium device*/
+  @media (min-width: 768px) {
+    .hero__bg__image__container {
+      height: 100vh;
+    }
+  
+    .hero__bg__overlay {
+      height: 100vh;
+    }
+    .hero__card {
+      top: 40%;/*to add content on proper position*/
+      left: 30%;
+      transform: translate(-20%, -20%);/*it add some few space on right side and left side and got the content
+      on center*/
+    }
+    .hero__title {
+      font-size: 3rem;
+    }
+    .hero__subtitle,
+    .hero__description {
+      font-size: 1.3rem;
+    }
+  
+    .feature {
+      padding: 4rem;
+    }
+  
+    .feature__title {
+      font-size: 35px;
+    }
+  
+    .feature__sub__title {
+      font-size: 20px;
+    }
+    .feature__2__poster__container {
+      max-width: 26em;
+      height: 85px;/*increase the height*/
+    }
+    .poster__container {
+      width: 15%;
+    }
+    .download__gif__container {
+      width: 3rem;
+      height: 3rem;
+    }
+  
+    .poster__details > h4 {
+      font-size: 18px;
+    }
+    .poster__details > h6 {
+      font-size: 14px;
+    }
+    .FAQ__title {
+      font-size: 20px;
+    }
+    .FAQ__heading {
+      font-size: 38px;
+      font-weight: 500;
+      letter-spacing: 1px;
+    }
+    .FAQ__list {
+      padding: 1rem 5rem;
+    }
+    .FAQ__get__started__email {
+      width: 75%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transform: translateX(15%);
+    }
+  }
+  /*this is for laptop device*/
+  @media (min-width: 1024px) {
+    .navbar {
+      padding: 2% 5%;/* 2% for top and bottom and 5 for left and right to reduce the padding or space for top */
+    }
+  
+    .navbar__brand {
+      width: 150px;/* logo size*/
+    }
+  
+    .signin__button {
+      padding: 12px 25px;/*for button*/
+      font-size: 18px;
+    }
+    .dropdown__container {
+      background-color: black;
+      padding: 10px 10px;/*to increase the size of the drop down container for looking same as
+      a sign in button */
+    }
+  
+    .navbar__nav__items {
+      gap: 30px;/*to have a gap between container and sign in button*/
+    }
+  
+    .hero__card {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    .form__container {
+      width: 50%;/*to reduce the width of the input field is low */
+    }
+    .email__form__container {
+      flex-direction: row;/*to align email and button in one line  */
+      align-items: center;
+      gap: 1px;/*to having gap between the email container and button*/
+    }
+    .primary__button {
+      height: 50px;/*to align or look same as a input field*/
+    }
+  
+    .feature {
+      display: flex;/*to align horizontaly*/
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  
+    .feature__details {
+      text-align: left;
+      padding: 0 6rem;/*to adding some spaces on left right&top bottom to video nd content*/
+    }
+  
+    .feature__title {
+      font-size: 40px;
+    }
+  
+    .feature__sub__title {
+      font-size: 25px;
+    }
+  
+    .feature__image__container {
+      max-width: 500px;/*to occupying whole width also the child class width also arrage properly*/
+    }
+  
+    .feature:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+  
+    .feature__2__poster__container {
+      max-width: 20em;/*to decrease some width*/
+      height: 100px;/*increase the height*/
+      padding: 1rem;
+    }
+    .poster__container {
+      width: 20%;
+    }
+    
+    .FAQ__list {
+      padding: 1rem 10rem;
+    }
+    .FAQ__heading {
+      font-size: 45px;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    .FAQ__title {
+      font-size: 26px;
+    }
+    .FAQ__get__started__email {
+      transform: translateX(16%);
+    }
+    footer {
+      padding: 2rem 25rem;
+      justify-content: flex-start;
+      text-align: left;
+      align-items: flex-start;
+    }
+  
+    .footer__row__2 {
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: nowrap;
+    }
+  
+    .footer__row__1,
+    .footer__row__3,
+    .footer__row__4 {
+      align-self: flex-start;
+    }
+  }
+  
+  @media (min-width: 1254px)
+  {}
+  
